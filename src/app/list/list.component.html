@@ -1,0 +1,33 @@
+
+
+
+<header>
+    <nav>
+      <ul>
+        <i routerLink="" class="fa-solid fa-chevron-left">Back</i>
+
+      </ul>
+    </nav>
+    <h1 >Clarivate List</h1>
+    <hr>
+  </header>
+  <div  (scroll)="scrollMe($event)">
+     <div class="card-container">
+        <ul class="list-group" *ngFor="let post of posts;let i =index">
+                 
+            <li class="list-group-item card-dim" >
+                <div class="card" (click)="isFavorite(i)">
+                    <img src="{{post.url}}" alt="Avatar" style="width:100%">
+                    <div >
+                      <p><b>{{post.title}}</b></p> 
+                      <i *ngIf="!post.fav" class="fa-regular fa-star"></i>
+                      <i *ngIf="post.fav" class="fa-solid fa-star"></i>
+                      
+                    </div>
+                  </div>
+            </li>
+           
+
+        </ul>
+        </div>
+   </div>
