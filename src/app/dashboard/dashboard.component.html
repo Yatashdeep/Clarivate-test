@@ -1,0 +1,35 @@
+<header>
+    <nav>
+      <ul>
+        <li>Dashboard</li>
+        <b><a routerLink="list" class="cursor-pointer">List</a></b>
+      
+      </ul>
+    </nav>
+    <h1>Welcome to Clarivate</h1>
+    <hr>
+  </header>
+
+<section>
+  <div>
+    <div class="card-container">
+       <ul class="list-group" *ngFor="let post of posts;let i =index">
+                
+           <li *ngIf="post.fav" class="list-group-item card-dim" >
+               <div class="card" >
+                   <img src="{{post.url}}" alt="Avatar" style="width:100%">
+                   <div >
+                     <p><b>{{post.title}}</b></p> 
+                     <i *ngIf="post.fav" class="fa-solid fa-star"></i>
+                  
+                     
+                   </div>
+                 </div>
+           </li>
+          
+
+       </ul>
+       </div>
+  </div>
+</section>
+<footer></footer>
